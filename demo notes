@@ -1,0 +1,32 @@
+
+outils utilises:
+
+Spring Tool suite bases sur l'IDE eclipse:  http://download.springsource.com/release/STS/3.4.0/dist/e4.3/spring-tool-suite-3.4.0.RELEASE-e4.3.1-win32-installer.exe
+
+- java 1.7  (jdk1.7.0_51)
+- JSF 2.2  (Mojarra 2.2.0) : javax.faces.jar 
+- primefaces 4.0:   http://www.primefaces.org/downloads
+- all-themes-1.0.10.jar (le theme utilise dans le demo est dut-lov): http://repository.primefaces.org/org/primefaces/themes/all-
+
+
+
+
+
+les composants primefaces utilises dans le demo:
+
+- panel
+- messages
+- growl
+- panelGrid
+- outputLabel
+- inputText
+- password
+- calendar
+- ajax
+- selectOneMenu
+- commandButton
+- accordionPanel
+- tab
+- tabView
+- row
+- column
