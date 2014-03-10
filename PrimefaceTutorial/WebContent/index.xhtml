@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"    
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form id="form">	
+	<p:panel id="reg">
+	<p:messages severity="info,warn,error"></p:messages>
+	<p:growl id="growl" showDetail="true" globalOnly="false" for="dob" autoUpdate="true"></p:growl>
+		<p:panelGrid columns="2">
+			<f:facet name="header">User Registration</f:facet>
+			<p:outputLabel for="username" value="Username :"></p:outputLabel>
+			<p:inputText value="#{user.username}" id="username" required="true" requiredMessage="Please Enter Username!" ></p:inputText>
+			<p:outputLabel value="Password :" for="password"></p:outputLabel>
+			<p:password id="password" value="#{user.password}" feedback="true" required="true" requiredMessage="Please Enter Password!"></p:password>
+			<p:outputLabel for="firstname" value="First name :"></p:outputLabel>
+			<p:inputText id="firstname" value="#{user.firstname}" required="true" requiredMessage="Please Enter First Name!"></p:inputText>
+			<p:outputLabel for="lastname" value="Last name :"></p:outputLabel>
+			<p:inputText id="lastname" value="#{user.lastname}" required="true" requiredMessage="Please Enter Last Name!"></p:inputText>			
+			<p:outputLabel for="dob" value="Date of Birth :"></p:outputLabel>
+			<p:calendar id="dob" pattern="dd/MM/yyyy" value="#{user.dob}"  effect="explode" navigator="true" required="true" requiredMessage="Please Enter the Date of Birth!">
+				<f:convertDateTime pattern="dd/MM/yyyy"></f:convertDateTime>
+				<p:ajax event="dateSelect" update="growl" listener="#{user.handleDateSelect}"></p:ajax>	
+			</p:calendar>
+			<p:outputLabel for="email" value="Email :"></p:outputLabel>
+			<p:inputText id="email" value="#{user.email}" required="true" requiredMessage="Please Enter Email!"></p:inputText>
+			<p:outputLabel for="phone" value="Phone# :"></p:outputLabel>
+			<p:inputText id="phone" value="#{user.phone}"></p:inputText>
+			<p:outputLabel for="mobile" value="Mobile# :"></p:outputLabel>
+			<p:inputText id="mobile" value="#{user.mobile}" required="true" requiredMessage="Please Enter Mobile Number!"></p:inputText>
+			<p:outputLabel for="groups" value="User Roles :"></p:outputLabel>
+			<p:selectOneMenu id="groups" value="#{user.selectedGroup}" required="true" requiredMessage="Please Select one user Role!">
+				<f:selectItem itemLabel="Select One" itemValue=""></f:selectItem>
+				<f:selectItem itemLabel="Administrators" itemValue="Administrators"></f:selectItem>
+				<f:selectItem itemLabel="Technicals" itemValue="Technicals"></f:selectItem>
+				<f:selectItem itemLabel="Managers" itemValue="Managers"></f:selectItem>
+				<f:selectItem itemLabel="Guests" itemValue="Guests"></f:selectItem>
+			</p:selectOneMenu>
+			<p:outputLabel for="city" value="City :"></p:outputLabel>
+			<p:inputText id="city" value="#{user.city}" required="true"
+				requiredMessage="Please Enter City!"></p:inputText>
+			<f:facet name="footer">
+			<p:commandButton value="Save" ajax="false" action="user.xhtml" icon="ui-icon-check"></p:commandButton>
+			</f:facet>
+		</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

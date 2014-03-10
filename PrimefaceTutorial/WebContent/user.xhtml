@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"    
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:accordionPanel>
+			<p:tab title="Personal Information">
+				<p:tabView>
+					<p:tab title="Personal Info">
+						<p:panelGrid>
+
+							<p:row>
+								<p:column style="font-weight:bold">First name</p:column>
+								<p:column>#{user.firstname}</p:column>
+							</p:row>
+							<p:row>
+								<p:column style="font-weight:bold;">Last name</p:column>
+								<p:column>#{user.lastname}</p:column>
+							</p:row>
+							<p:row>
+								<p:column style="font-weight:bold;">Date Of Birth</p:column>
+								<p:column pattern="dd/MM/yyyy">#{user.dob}</p:column>
+							</p:row>
+
+							<p:row>
+								<p:column style="font-weight:bold;">User Roles</p:column>
+								<p:column>#{user.selectedGroup}</p:column>
+							</p:row>
+							<p:row>
+								<p:column style="font-weight:bold;">City</p:column>
+								<p:column>#{user.city}</p:column>
+							</p:row>
+
+						</p:panelGrid>
+					</p:tab>
+					<p:tab title="Contact Info">
+						<p:panelGrid>
+							<p:row>
+								<p:column style="font-weight:bold;">Phone number</p:column>
+								<p:column>#{user.phone}</p:column>
+							</p:row>
+							<p:row>
+								<p:column style="font-weight:bold;">Mobile number</p:column>
+								<p:column>#{user.mobile}</p:column>
+							</p:row>
+							<p:row>
+								<p:column style="font-weight:bold;">Email</p:column>
+								<p:column>#{user.email}</p:column>
+							</p:row>
+
+						</p:panelGrid>
+					</p:tab>
+				</p:tabView>
+
+			</p:tab>
+			<p:tab title="Login Information">
+				<p:panelGrid>
+					<p:row style="font-weight:bold;">
+						<p:column>Username</p:column>
+						<p:column>#{user.username}</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:tab>
+
+
+
+
+		</p:accordionPanel>
+		
+		<p:commandButton action="index.xhtml" value="Back to Registration page"></p:commandButton>
+	</h:form>
+
+
+
+</h:body>
+</html>
